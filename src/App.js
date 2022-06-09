@@ -12,26 +12,26 @@ function App() {
   // alienSize should be a number that starts out as 10
   const [alienSize, setAlienSize] = useState(10);
   // traffic is complicated. It should be an array of strings that starts out as ['car', 'truck']
-  const [vehicle, setVehicle] = useState(['car', 'truck', 'bus', 'motorcycle']);
+  const [vehicles, setVehicles] = useState(['car', 'truck', 'bus', 'motorcycle']);
 
   function handleCarClick() {
-    vehicle.push('car');
-    setVehicle(vehicle.slice());
+    vehicles.push('car');
+    setVehicles(vehicles.slice());
   }
 
   function handleTruckClick() {
-    vehicle.push('truck');
-    setVehicle(vehicle.slice());
+    vehicles.push('truck');
+    setVehicles(vehicles.slice());
   }
 
   function handleBusClick() {
-    vehicle.push('bus');
-    setVehicle(vehicle.slice());
+    vehicles.push('bus');
+    setVehicles(vehicles.slice());
   }
 
   function handleMotorcycleClick() {
-    vehicle.push('motorcycle');
-    setVehicle(vehicle.slice());
+    vehicles.push('motorcycle');
+    setVehicles(vehicles.slice());
   }
   
   return (
@@ -72,7 +72,7 @@ function App() {
       This prop should be an array of strings like ['car', 'truck', 'truck', 'car', 'bus'].
       Do you have something like that in state that you could pass as a vehicles prop? 
       */}
-      <VehicleList vehicle={vehicle} />
+      <VehicleList vehicles={vehicles} />
       <div className='buttons'>
         {/* This part is weird */}
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'car' to the end */}
