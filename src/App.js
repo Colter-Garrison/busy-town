@@ -12,26 +12,26 @@ function App() {
   // alienSize should be a number that starts out as 10
   const [alienSize, setAlienSize] = useState(10);
   // traffic is complicated. It should be an array of strings that starts out as ['car', 'truck']
-  const [vehicles, setVehicles] = useState(['car', 'truck', 'bus', 'motorcycle']);
+  const [traffic, setTraffic] = useState(['car', 'truck', 'bus', 'motorcycle']);
 
   function handleCarClick() {
-    vehicles.push('car');
-    setVehicles(vehicles.slice());
+    traffic.push('car');
+    setTraffic(traffic.slice());
   }
 
   function handleTruckClick() {
-    vehicles.push('truck');
-    setVehicles(vehicles.slice());
+    traffic.push('truck');
+    setTraffic(traffic.slice());
   }
 
   function handleBusClick() {
-    vehicles.push('bus');
-    setVehicles(vehicles.slice());
+    traffic.push('bus');
+    setTraffic(traffic.slice());
   }
 
   function handleMotorcycleClick() {
-    vehicles.push('motorcycle');
-    setVehicles(vehicles.slice());
+    traffic.push('motorcycle');
+    setTraffic(traffic.slice());
   }
   
   return (
@@ -61,18 +61,18 @@ function App() {
       <TrafficLight color={lightColor} />
       <div className="buttons">
         {/* when you click this button, the color of the light in state should be set to 'red' */}
-        <button>Red</button>
+        <button onClick={() => setLightColor('red')}>Red</button>
         {/* when you click this button, the color of the light in state should be set to 'yellow' */}
-        <button>Yellow</button>
+        <button onClick={() => setLightColor('yellow')}>Yellow</button>
         {/* when you click this button, the color of the light in state should be set to 'green' */}
-        <button>Green</button>
+        <button onClick={() => setLightColor('green')}>Green</button>
       </div>
       {/* 
-      the VehicleList component takes in one prop: vehicles.
+      the VehicleList component takes in one prop: traffic.
       This prop should be an array of strings like ['car', 'truck', 'truck', 'car', 'bus'].
-      Do you have something like that in state that you could pass as a vehicles prop? 
+      Do you have something like that in state that you could pass as a traffic prop? 
       */}
-      <VehicleList vehicles={vehicles} />
+      <VehicleList vehicles={traffic} />
       <div className='buttons'>
         {/* This part is weird */}
         {/* On click, you should set the traffic in state to be a copy of the same array that's already in state, but immutably add a 'car' to the end */}
