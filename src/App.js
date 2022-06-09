@@ -4,7 +4,7 @@ import VehicleList from './VehicleList';
 import TrafficLight from './TrafficLight';
 
 function App() {
-  // track the following state with a few useState hooks:
+  // track the folljowing state with a few useState hooks:
   // lightColor should be a string that starts out as 'red'
   const [lightColor, setLightColor] = useState('red');
   // lizardSize should be a number that starts out as 10
@@ -91,3 +91,4 @@ function App() {
 
 export default App;
 
+// commenting
