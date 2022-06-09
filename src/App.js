@@ -39,12 +39,12 @@ function App() {
       <div className="fight">
         <div className="monster">
           {/* the width of the alien should be ten times whatever the alien size is in state */}
-          <img src="alien.png" width={20} />
+          <img src="alien.png" width={`${alienSize * 10}`} />
           <div className='buttons'>
             {/* when you click this button, the alien's size in state should go up by one */}
-            <button>Oh no! The alien is gobblin up all the electricity!</button>
+            <button onClick={() => setAlienSize(alienSize + 1)}>Oh no! The alien is gobblin up all the electricity!</button>
             {/* when you click this button, the lizard's size in state should go down by one */}
-            <button >Amazing! The alien zapped the lizard!</button>
+            <button onClick={() => setLizardSize(lizardSize - 1)}>Amazing! The alien zapped the lizard!</button>
           </div>
         </div>
         <div className="monster">
